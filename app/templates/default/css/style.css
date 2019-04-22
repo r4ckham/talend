@@ -16,6 +16,18 @@
     border-bottom-left-radius: 0px !important;
 }
 
+.navbar-center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    overflow: visible;
+    height: 0;
+    color: white;
+}
+
+
 @media screen and (max-width: 600px) {
     .map-dashboard {
         transform:rotate(90deg);

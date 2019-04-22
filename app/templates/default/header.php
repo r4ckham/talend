@@ -107,12 +107,17 @@ $hooks = Hooks::get();
 
         <!-- Header Navbar -->
         <nav class="navbar navbar-static-top" role="navigation">
+
+            <p class='navbar-text navbar-center'> <?= $data['PAGE_TITTLE'] ?></p>
+
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
+
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
+
                 <ul class="nav navbar-nav">
                     <!-- Messages: style can be found in dropdown.less-->
                     <li class="dropdown messages-menu">

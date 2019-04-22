@@ -26,6 +26,7 @@ class DashboardController extends Controller
     {
 
         $data = [];
+        $data["PAGE_TITTLE"] = "Données en temps en réel (24h)";
 
         View::renderTemplate('header', $data);
 

@@ -8,12 +8,6 @@
 
 ?>
 
-<section class="content-header jumbotron text-center">
-    <h1>
-        Résumé 24 H
-    </h1>
-</section>
-
 <div id="container">
 
 </div>
