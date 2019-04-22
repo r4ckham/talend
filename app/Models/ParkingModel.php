@@ -10,7 +10,9 @@ namespace Models;
 
 
 use Core\Model;
+use Entite\ParkingEntite;
 use Helpers\Database;
+use Helpers\Date;
 
 class ParkingModel extends Model
 {
@@ -26,7 +28,7 @@ class ParkingModel extends Model
     private $f_free     = self::F_FREE;
     private $f_total    = self::F_TOTAL;
 
-    private $table = Database::USR;
+    private $table = Database::PKG;
 
     public function __construct()
     {
@@ -34,14 +36,12 @@ class ParkingModel extends Model
     }
 
     /**
-     * @param String $mail
-     * @param String $pwd
-     * @return UserEntite|null
+     * @param Date $dateMin
+     * @param Date $dateMax
+     * @return ParkingEntite|array
      */
     public function getDataByPeriod($dateMin , $dateMax)
     {
-
-
         $ps = [
             ":dateMin"=> $dateMin ,
             ":dateMax" => $dateMax,
@@ -51,12 +51,37 @@ class ParkingModel extends Model
         $sql.= "WHERE $this->f_datetime <= :dateMin ";
         $sql.= "AND $this->f_datetime >= :dateMax";
 
-        $rows = $this->db->select($sql , $ps , \PDO::FETCH_CLASS , UserEntite::class);
+        return $this->db->select($sql , $ps , \PDO::FETCH_CLASS , ParkingEntite::class);
+    }
 
-        if(empty($rows)){
-            return null;
-        }
 
-        return $rows[0];
+    public function getDataByNameForDay($name)
+    {
+        $ps = [
+            ":name"=> $name ,
+        ];
+
+        $sql = "SELECT * FROM $this->table ";
+        $sql.= "WHERE $this->f_datetime >=  NOW() - INTERVAL 1 DAY ";
+        $sql.= "AND $this->f_datetime <= NOW() ";
+        $sql.= "AND $this->f_name = :name";
+
+        return $this->db->select($sql , $ps , \PDO::FETCH_CLASS , ParkingEntite::class);
+    }
+
+    /**
+     * @param $name
+     * @return array|ParkingEntite
+     */
+    public function getDataByParkingName($name)
+    {
+        $ps = [
+            ":name" => $name,
+        ];
+
+        $sql = "SELECT * FROM $this->table ";
+        $sql.= "WHERE $this->f_name = :name";
+
+        return $this->db->select($sql , $ps , \PDO::FETCH_CLASS , ParkingEntite::class);
     }
 }

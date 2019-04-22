@@ -1,0 +1,104 @@
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Apr 22, 2019 0:05AM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTERVAL 1 DAYAND Datetime >= NOW()' at line 1</p>
+
+           <p><strong>Code:</strong> 42000</p>
+
+           <p><strong>File:</strong> /Applications/MAMP/htdocs/talend/app/Helpers/Database.php</p>
+
+           <p><strong>Line:</strong> 122</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 /Applications/MAMP/htdocs/talend/app/Helpers/Database.php(122): PDOStatement->execute()
+#1 /Applications/MAMP/htdocs/talend/app/Models/ParkingModel.php(69): Helpers\Database->select('SELECT * FROM u...', Array, 8, 'Entite\\ParkingE...')
+#2 /Applications/MAMP/htdocs/talend/app/controllers/DashboardController.php(48): Models\ParkingModel->getDataByNameForDay('triangle')
+#3 /Applications/MAMP/htdocs/talend/app/controllers/DashboardController.php(38): Controllers\DashboardController->getParkingDataDay()
+#4 [internal function]: Controllers\DashboardController->ajax()
+#5 /Applications/MAMP/htdocs/talend/app/Core/Router.php(124): call_user_func_array(Array, Array)
+#6 /Applications/MAMP/htdocs/talend/app/Core/Router.php(214): Core\Router::invokeObject('controllers\\Das...')
+#7 /Applications/MAMP/htdocs/talend/app/Core/routes.php(39): Core\Router::dispatch()
+#8 /Applications/MAMP/htdocs/talend/index.php(80): require('/Applications/M...')
+#9 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Apr 22, 2019 0:06AM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTERVAL 1 DAY AND Datetime >= NOW()' at line 1</p>
+
+           <p><strong>Code:</strong> 42000</p>
+
+           <p><strong>File:</strong> /Applications/MAMP/htdocs/talend/app/Helpers/Database.php</p>
+
+           <p><strong>Line:</strong> 122</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 /Applications/MAMP/htdocs/talend/app/Helpers/Database.php(122): PDOStatement->execute()
+#1 /Applications/MAMP/htdocs/talend/app/Models/ParkingModel.php(69): Helpers\Database->select('SELECT * FROM u...', Array, 8, 'Entite\\ParkingE...')
+#2 /Applications/MAMP/htdocs/talend/app/controllers/DashboardController.php(48): Models\ParkingModel->getDataByNameForDay('triangle')
+#3 /Applications/MAMP/htdocs/talend/app/controllers/DashboardController.php(38): Controllers\DashboardController->getParkingDataDay()
+#4 [internal function]: Controllers\DashboardController->ajax()
+#5 /Applications/MAMP/htdocs/talend/app/Core/Router.php(124): call_user_func_array(Array, Array)
+#6 /Applications/MAMP/htdocs/talend/app/Core/Router.php(214): Core\Router::invokeObject('controllers\\Das...')
+#7 /Applications/MAMP/htdocs/talend/app/Core/routes.php(39): Core\Router::dispatch()
+#8 /Applications/MAMP/htdocs/talend/index.php(80): require('/Applications/M...')
+#9 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Apr 22, 2019 0:07AM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Datetime' in 'where clause'</p>
+
+           <p><strong>Code:</strong> 42S22</p>
+
+           <p><strong>File:</strong> /Applications/MAMP/htdocs/talend/app/Helpers/Database.php</p>
+
+           <p><strong>Line:</strong> 122</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 /Applications/MAMP/htdocs/talend/app/Helpers/Database.php(122): PDOStatement->execute()
+#1 /Applications/MAMP/htdocs/talend/app/Models/ParkingModel.php(69): Helpers\Database->select('SELECT * FROM u...', Array, 8, 'Entite\\ParkingE...')
+#2 /Applications/MAMP/htdocs/talend/app/controllers/DashboardController.php(48): Models\ParkingModel->getDataByNameForDay('triangle')
+#3 /Applications/MAMP/htdocs/talend/app/controllers/DashboardController.php(38): Controllers\DashboardController->getParkingDataDay()
+#4 [internal function]: Controllers\DashboardController->ajax()
+#5 /Applications/MAMP/htdocs/talend/app/Core/Router.php(124): call_user_func_array(Array, Array)
+#6 /Applications/MAMP/htdocs/talend/app/Core/Router.php(214): Core\Router::invokeObject('controllers\\Das...')
+#7 /Applications/MAMP/htdocs/talend/app/Core/routes.php(39): Core\Router::dispatch()
+#8 /Applications/MAMP/htdocs/talend/index.php(80): require('/Applications/M...')
+#9 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Apr 22, 2019 0:14AM</p>
+
+           <p><strong>Message:</strong> syntax error, unexpected '.=' (T_CONCAT_EQUAL)</p>
+
+           <p><strong>Code:</strong> 0</p>
+
+           <p><strong>File:</strong> /Applications/MAMP/htdocs/talend/app/Models/ParkingModel.php</p>
+
+           <p><strong>Line:</strong> 67</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 /Applications/MAMP/htdocs/talend/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/Applications/M...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('Models\\ParkingM...')
+#2 /Applications/MAMP/htdocs/talend/app/controllers/DashboardController.php(47): spl_autoload_call('Models\\ParkingM...')
+#3 /Applications/MAMP/htdocs/talend/app/controllers/DashboardController.php(38): Controllers\DashboardController->getParkingDataDay(Array)
+#4 [internal function]: Controllers\DashboardController->ajax()
+#5 /Applications/MAMP/htdocs/talend/app/Core/Router.php(124): call_user_func_array(Array, Array)
+#6 /Applications/MAMP/htdocs/talend/app/Core/Router.php(214): Core\Router::invokeObject('controllers\\Das...')
+#7 /Applications/MAMP/htdocs/talend/app/Core/routes.php(39): Core\Router::dispatch()
+#8 /Applications/MAMP/htdocs/talend/index.php(80): require('/Applications/M...')
+#9 {main}</pre>
+
+           <hr />

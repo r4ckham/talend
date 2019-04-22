@@ -22,6 +22,7 @@ Router::any(Url::URL_NEW_USER, 'controllers\NewUserController@index');
 Router::any(Url::URL_INS_NEW, 'controllers\NewUserController@insertNewUSer');
 
 Router::any(Url::URL_DASHBOARD, 'controllers\DashboardController@index');
+Router::any(Url::URL_DASH_AJAX, 'controllers\DashboardController@ajax');
 
 
 /* Module routes. */

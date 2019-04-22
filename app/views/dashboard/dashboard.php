@@ -8,8 +8,27 @@
 
 ?>
 
-<section class="content-header">
+<section class="content-header jumbotron text-center">
     <h1>
-        Acceuil
+        Résumé 24 H
     </h1>
 </section>
+
+<div id="container">
+
+</div>
+
+
+
+<script>
+
+
+</script>
+
+<script>
+    var ajaxUrl = "<?= DIR . \Helpers\Url::URL_DASH_AJAX ?>";
+
+    parkingController.init(ajaxUrl , "container");
+
+</script>
+

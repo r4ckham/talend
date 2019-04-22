@@ -13,7 +13,7 @@ $hooks = Hooks::get();
 <!DOCTYPE html>
 <head lang="<?php echo LANGUAGE_CODE; ?>">
 
-<title>BaseProjet</title>
+<title>Talend</title>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,6 +47,7 @@ $hooks = Hooks::get();
 
         // Site
         Url::templatePath() . "css/style.css",
+        Url::templatePath() . "plugins/Highcharts/code/css/highcharts.css",
     ]);
 
     // hook for plugging in css
@@ -84,6 +85,7 @@ $hooks = Hooks::get();
         
         // Site
         Url::templatePath() . "js/site.js",
+        Url::templatePath() . "plugins/Highcharts/code/highcharts.js",
     ]);
 ?>
 
@@ -98,9 +100,9 @@ $hooks = Hooks::get();
         <!-- Logo -->
         <a href="" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>B</b>PRJ</span>
+            <span class="logo-mini"><b>T</b>LND</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg">BaseProjet</span>
+            <span class="logo-lg">Projet Talend</span>
         </a>
 
         <!-- Header Navbar -->
@@ -294,7 +296,7 @@ $hooks = Hooks::get();
                         <i class="fa fa-map fa-fw"></i>  <span> Accueil </span>
                     </a>
                 </li>
-                <li class="">
+                <!--<li class="">
                     <a href="<?php //TODO redirect ?>">
                         <i class="fas fa-tasks"></i> <span> Demandes </span>
                     </a>
@@ -309,7 +311,7 @@ $hooks = Hooks::get();
                         <a href="<?php //TODO redirect ?>">
                             <i class="fa fa-users fa-fw"></i> <span> Aministration </span>
                         </a>
-                    </li>
+                    </li> -->
                 <?php //endif; ?>
                 <li class="bg-red-active">
                     <a href="<?= DIR . Url::URL_LOGOUT ?>">
