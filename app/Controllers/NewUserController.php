@@ -14,6 +14,7 @@ use Core\View;
 use Helpers\hError;
 use Helpers\hMessage;
 use Helpers\hUrl;
+use Helpers\hUser;
 use Helpers\Url;
 use Models\UserModel;
 
@@ -56,6 +57,8 @@ class NewUserController extends Controller
         }
 
         $model->insertNewUser($nom,$prenom,$log,$pwd);
+        $user = $model->getUserByMailAndPwd($log , $pwd);
+        hUser::setUser($user);
 
         hUrl::redirectFromSuccess(Url::URL_DASHBOARD, hMessage::SUCCESS_CREATE);
 
