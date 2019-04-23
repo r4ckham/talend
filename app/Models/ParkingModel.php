@@ -64,7 +64,7 @@ class ParkingModel extends Model
         $sql = "SELECT * FROM $this->table ";
         $sql.= "WHERE $this->f_datetime >=  NOW() - INTERVAL 1 DAY ";
         $sql.= "AND $this->f_datetime <= NOW() ";
-        $sql.= "AND $this->f_name = :name";
+        $sql.= "AND $this->f_name = :name ORDER BY $this->f_datetime ASC";
 
         return $this->db->select($sql , $ps , \PDO::FETCH_CLASS , ParkingEntite::class);
     }

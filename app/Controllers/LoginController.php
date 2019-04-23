@@ -54,8 +54,10 @@ class LoginController extends Controller
             hUrl::redirectFromError(Url::URL_WELCOME, hError::USER_NOT_EXIST);
         }
 
+
         $model = new UserModel();
         $user = $model->getUserByMailAndPwd($log , $pwd);
+
 
         if(empty($user)){
             hUrl::redirectFromError(Url::URL_WELCOME, hError::BAD_PASSWORD);

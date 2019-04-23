@@ -39,6 +39,7 @@ abstract class Controller
      */
     public function __construct()
     {
+
         if(!hUser::isConnected() &&  Url::detectUri() != "/"  ){
             if(Url::detectUri() != Url::URL_LOGIN && Url::detectUri() != Url::URL_NEW_USER && Url::detectUri() != Url::URL_INS_NEW ){
                 hUrl::redirectFromError("", hError::NOT_CONNECTED);

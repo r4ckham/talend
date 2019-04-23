@@ -32,7 +32,7 @@ class Config
         /*
          * Define relative base path.
          */
-        define('DIR', '/talend/');
+        define('DIR', 'http://localhost/talend/');
         define('ENV', 'DEV');
 
         /*
@@ -40,7 +40,7 @@ class Config
          */
         define('DEFAULT_CONTROLLER', 'welcome');
         define('DEFAULT_METHOD', 'index');
-        define('ASSETS_VERSION', '1_0_0_000000');
+        define('ASSETS_VERSION', '1_0_0_000001');
 
         /*
          * Set the default template.
