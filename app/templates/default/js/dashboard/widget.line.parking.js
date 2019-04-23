@@ -23,7 +23,7 @@ $.widget( "custom.line", {
 
         Highcharts.setOptions({
             title: {
-                text: 'Parking : ' + this.options.name
+                text: '<span style="color:mediumblue"> ' + this.options.name + " </span>"
             },
         });
 

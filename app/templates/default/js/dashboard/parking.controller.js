@@ -126,7 +126,12 @@ var parkingController = {
 
     initHighchart : function(){
         Highcharts.setOptions({
+            colors : ["#3c8dbc" , "coral"],
+
             chart: {
+                borderColor: 'lightgrey',
+                borderWidth: 1,
+                borderRadius: 5,
                 type:"line",
                 zoomType: 'x'
             },
@@ -180,7 +185,11 @@ var parkingController = {
                         }
                     }
                 }]
-            }
+            },
+
+            credits: {
+                enabled: false
+            },
         });
     }
 
