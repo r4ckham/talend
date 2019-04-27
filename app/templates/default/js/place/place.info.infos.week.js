@@ -1,8 +1,76 @@
 "use strict";
 
-var _template = '<div id="chart-info"></div>';
+var _template = '<div id="chart-info-week"></div>';
 
-var placeInfos = {
+var _optionHighchart = {
+    colors : ["#3c8dbc" , "coral"],
+
+    chart: {
+        backgroundColor : 'black',
+        borderColor: 'lightgrey',
+        borderWidth: 1,
+        borderRadius: 5,
+        type:"line",
+        zoomType: 'x',
+    },
+
+    title: {
+        text: 'Place de Parking : Triangle'
+    },
+
+    subtitle: {
+        text: 'Source: data.montpellier3m.fr'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Occupation'
+        }
+    },
+    xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: {
+            day: '%e de %b'
+        },
+        title: {
+            text: 'Date'
+        },
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+        }
+    },
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    },
+
+    credits: {
+        enabled: false
+    },
+};
+
+var placeInfosWeek = {
 
     props : ["frees"],
 
@@ -10,7 +78,7 @@ var placeInfos = {
 
     data:  function(){
         return {
-            container: "chart-info",
+            container: "chart-info-week",
         };
     },
 
@@ -29,8 +97,9 @@ var placeInfos = {
 
         displayChartsInfos : function(){
             var that = this;
+            Highcharts.setOptions(_optionHighchart);
             $("#" + this.container ).highcharts({
-                colors : ["#008d4c"],
+                colors : ["steelblue"],
 
                 chart: {
                     backgroundColor : 'black',

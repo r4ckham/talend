@@ -1,16 +1,17 @@
 "use strict";
 
-var _template = '<div id="chart-occupation-jour"></div>';
+var _template = '<div id="chart-info-day"></div>';
 
 var _optionHighchart = {
     colors : ["#3c8dbc" , "coral"],
 
     chart: {
+        backgroundColor : 'black',
         borderColor: 'lightgrey',
         borderWidth: 1,
         borderRadius: 5,
         type:"line",
-        zoomType: 'x'
+        zoomType: 'x',
     },
 
     title: {
@@ -23,7 +24,7 @@ var _optionHighchart = {
 
     yAxis: {
         title: {
-            text: 'Nombre de places'
+            text: 'Occupation'
         }
     },
     xAxis: {
@@ -69,21 +70,21 @@ var _optionHighchart = {
     },
 };
 
-var placeAggloJour = {
+var placeInfosDay = {
 
-    props : ["occupations"],
+    props : ["frees"],
 
     template: _template,
 
     data:  function(){
         return {
-            container: "chart-occupation-jour",
+            container: "chart-info-day",
         };
     },
 
     watch : {
-        occupations : function() {
-            $("#" + this.container).highcharts().series[0].setData(this.occupations);
+        frees : function() {
+            $("#" + this.container).highcharts().series[0].setData(this.frees);
         },
 
     },
@@ -98,9 +99,10 @@ var placeAggloJour = {
             var that = this;
             Highcharts.setOptions(_optionHighchart);
             $("#" + this.container ).highcharts({
-                colors : ["blueviolet"],
+                colors : ["steelblue"],
 
                 chart: {
+                    backgroundColor : 'black',
                     borderColor: 'lightgrey',
                     borderWidth: 1,
                     borderRadius: 5,
@@ -114,7 +116,7 @@ var placeAggloJour = {
                     y: 0
                 },
                 title: {
-                    text: 'Graphique Occupation Moyenne Par Jour'
+                    text: 'Graphique Temps réel'
                 },
                 xAxis: {
                     type: 'datetime',
@@ -126,9 +128,9 @@ var placeAggloJour = {
                     },
                 },
                 series: [{
-                    name: 'Occupation (%)',
+                    name: 'Place Libres',
                     type: 'area',
-                    dataagglo: that.occupations
+                    data: that.frees
                 }],
             });
         },

@@ -3,8 +3,8 @@
 var _template = " <div class='alert alert-info row text-center' style='margin-left: 0px;margin-right: 0px;margin-top: 10px;background-color: #3c8dbc!important'> " +
                     "<div class='col-lg-2'> " +
                         "<div class=\"input-group\">\n" +
-                            "<span class='input-group-addon'>Nom</span>\n" +
-                            "<p type='text' class='form-control' style='font-weight: bold'> {{ titre }} </p>" +
+                            "<span class='input-group-addon'>Nom <button @click='tarace'> btn </button></span>\n" +
+                            "<p type='text' class='form-control' style='font-weight: bold'> {{ value }} </p>" +
                         "</div>" +
                     "</div>" +
                     "<div class='col-lg-4'> " +
@@ -35,13 +35,24 @@ var _template = " <div class='alert alert-info row text-center' style='margin-le
 
 var placeTitre = {
 
-    props : ["titre" , "total" , "lastDate" , "status" , "code"],
+    props : ["titre" , "total" , "lastDate" , "status" , "code" , "value"],
 
     template: _template,
 
     data:  function(){
         return {
-
         };
+    },
+
+    created : function(){
+        console.log(this.value);
+    },
+
+    methods : {
+        tarace : function () {
+            console.log(this.test);
+
+            this.$emit("input" , "lalalalal");
+        }
     },
 };

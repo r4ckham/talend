@@ -5,28 +5,39 @@ var _app = {
     el: '#app',
 
     data:  {
-        titre : "titre de base",
+        titre       : "titre de base",
+
         aggloHeures : [],
-        aggloJours : [],
-        infos : {
-            frees : [],
-            totals : [],
+        aggloJours  : [],
+        infosDay    :
+        {
+            frees   : [],
+            totals  : [],
         },
-        total : 0,
-        lastDate : null,
-        code : null,
-        status : null,
+        infosWeek   :
+        {
+            frees   : [],
+            totals  : [],
+        },
+        total       : 0,
+        lastDate    : null,
+        code        : null,
+        status      : null,
+
+        test        : "zut",
     },
 
     components : {
         "place-titre" : placeTitre,
-        "place-infos" : placeInfos,
+        "place-infos-week" : placeInfosWeek,
+        "place-infos-day" : placeInfosDay,
         "place-agglo-heure" : placeAggloHeure,
         "place-agglo-jour" : placeAggloJour,
     },
 
     created : function(){
-        this.titre = "corum";
+        this.titre = "Triangle";
+        this.code="CORU";
     },
 
     mounted : function(){
@@ -46,9 +57,9 @@ var _app = {
 
             var form = {
                 action : "init-all-data",
-                name : "CORU",
+                name : this.code,
             };
-
+            // TODO ARRAYENTITE
             $.post(ajaxUrl , form , function(data){
                 if(data.status != 200){
                     console.log(data.error);
@@ -57,7 +68,7 @@ var _app = {
                 var tempFrees = [];
                 var tempTotals= [];
 
-                $.each(data.infos , function(index , info){
+                $.each(data.infosWeek , function(index , info){
                     // var date = info.Datetime;
                     var date = new Date(info.Datetime.replace(/-/g,"/"));
                     date = Date.UTC(date.getFullYear() , date.getMonth() , date.getDate() , date.getHours() , date.getMinutes());
@@ -68,13 +79,27 @@ var _app = {
                     tempFrees.push([date , free]);
                     tempTotals.push([date , total]);
 
-                    if(index == data.infos.length - 1){
+                    if(index == data.infosWeek.length - 1){
                         that.total = total;
                         that.lastDate = info.Datetime;
                         that.code = info.Name;
                         that.status = info.Status;
                     }
 
+                });
+
+                var tempFreesDays = [];
+                var tempTotalsDays = [];
+                $.each(data.infosDay , function(index , info){
+                    // var date = info.Datetime;
+                    var date = new Date(info.Datetime.replace(/-/g,"/"));
+                    date = Date.UTC(date.getFullYear() , date.getMonth() , date.getDate() , date.getHours() , date.getMinutes());
+
+                    var free = parseInt(info.Free , 10);
+                    var total = parseInt(info.Total , 10);
+
+                    tempFreesDays.push([date , free]);
+                    tempTotalsDays.push([date , total]);
 
                 });
 
@@ -104,8 +129,12 @@ var _app = {
                     tempAggloJours.push([date , Math.round(occupation)]);
                 });
 
-                that.infos.frees = tempFrees;
-                that.infos.totals = tempTotals;
+
+                that.infosWeek.frees = tempFrees;
+                that.infosWeek.totals = tempTotals;
+
+                that.infosDay.frees = tempFreesDays;
+                that.infosDay.totals = tempTotalsDays;
 
                 that.aggloHeures = tempAggloHeures;
                 that.aggloJours = tempAggloJours;

@@ -35,7 +35,8 @@ class PlaceInfoController extends Controller
 
         Assets::js([
             Url::templatePath() . "js/place/place.info.titre.js",
-            Url::templatePath() . "js/place/place.info.infos.js",
+            Url::templatePath() . "js/place/place.info.infos.week.js",
+            Url::templatePath() . "js/place/place.info.infos.day.js",
             Url::templatePath() . "js/place/place.info.agglo.heure.js",
             Url::templatePath() . "js/place/place.info.agglo.jour.js",
             Url::templatePath() . "js/place/place.info.app.js",
@@ -64,7 +65,8 @@ class PlaceInfoController extends Controller
         $dbg["name"] = $name;
 
         $model = new ParkingModel();
-        $infos = $model->getDataByNameForWeek($name);
+        $infosWeek = $model->getDataByNameForWeek($name);
+        $infosDay = $model->getDataByNameForDay($name);
 
         $model = new ParkingAggloHeureModel();
         $aggloHeure = $model->getAggloLastWeekForCode($name);
@@ -75,7 +77,8 @@ class PlaceInfoController extends Controller
         $data = [
             "status"    => hError::NO_ERROR,
             "message"   => hError::getMessage(hError::NO_ERROR),
-            "infos"     => $infos,
+            "infosWeek" => $infosWeek,
+            "infosDay"  => $infosDay,
             "aggloHeure"=> $aggloHeure,
             "aggloJour" => $aggloJour,
             "dbg"       => $dbg,

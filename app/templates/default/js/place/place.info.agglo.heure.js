@@ -10,7 +10,7 @@ var _optionHighchart = {
         borderWidth: 1,
         borderRadius: 5,
         type:"line",
-        zoomType: 'x'
+        zoomType: 'x',
     },
 
     title: {
@@ -98,14 +98,14 @@ var placeAggloHeure = {
             var that = this;
             Highcharts.setOptions(_optionHighchart);
             $("#" + this.container ).highcharts({
-                colors : ["#008d4c"],
+                colors : ["mediumslateblue"],
 
                 chart: {
                     borderColor: 'lightgrey',
                     borderWidth: 1,
                     borderRadius: 5,
-                    type:"line",
-                    zoomType: 'x'
+                    type:"area",
+                    zoomType: 'x',
                 },
                 legend: {
                     align: 'center',
