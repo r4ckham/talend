@@ -102,3 +102,77 @@
 #9 {main}</pre>
 
            <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Apr 26, 2019 23:01PM</p>
+
+           <p><strong>Message:</strong> Class 'Controllers\View' not found</p>
+
+           <p><strong>Code:</strong> 0</p>
+
+           <p><strong>File:</strong> /Applications/MAMP/htdocs/talend/app/controllers/PlaceInfoController.php</p>
+
+           <p><strong>Line:</strong> 26</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 [internal function]: Controllers\PlaceInfoController->index()
+#1 /Applications/MAMP/htdocs/talend/app/Core/Router.php(124): call_user_func_array(Array, Array)
+#2 /Applications/MAMP/htdocs/talend/app/Core/Router.php(214): Core\Router::invokeObject('controllers\\Pla...')
+#3 /Applications/MAMP/htdocs/talend/app/Core/routes.php(42): Core\Router::dispatch()
+#4 /Applications/MAMP/htdocs/talend/index.php(80): require('/Applications/M...')
+#5 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Apr 27, 2019 2:35AM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Free' in 'field list'</p>
+
+           <p><strong>Code:</strong> 42S22</p>
+
+           <p><strong>File:</strong> /Applications/MAMP/htdocs/talend/app/Helpers/Database.php</p>
+
+           <p><strong>Line:</strong> 124</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 /Applications/MAMP/htdocs/talend/app/Helpers/Database.php(124): PDOStatement->execute()
+#1 /Applications/MAMP/htdocs/talend/app/Models/ParkingAggloHeure.php(45): Helpers\Database->select('SELECT pa.Datet...', Array, 8, 'Entite\\ParkingA...')
+#2 /Applications/MAMP/htdocs/talend/app/controllers/PlaceInfoController.php(68): Models\ParkingAggloHeure->getAggloLastWeekForCode('CORU')
+#3 /Applications/MAMP/htdocs/talend/app/controllers/PlaceInfoController.php(55): Controllers\PlaceInfoController->initAllData(Array)
+#4 [internal function]: Controllers\PlaceInfoController->ajax()
+#5 /Applications/MAMP/htdocs/talend/app/Core/Router.php(124): call_user_func_array(Array, Array)
+#6 /Applications/MAMP/htdocs/talend/app/Core/Router.php(214): Core\Router::invokeObject('controllers\\Pla...')
+#7 /Applications/MAMP/htdocs/talend/app/Core/routes.php(42): Core\Router::dispatch()
+#8 /Applications/MAMP/htdocs/talend/index.php(80): require('/Applications/M...')
+#9 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Apr 27, 2019 2:37AM</p>
+
+           <p><strong>Message:</strong> SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Total' in 'field list'</p>
+
+           <p><strong>Code:</strong> 42S22</p>
+
+           <p><strong>File:</strong> /Applications/MAMP/htdocs/talend/app/Helpers/Database.php</p>
+
+           <p><strong>Line:</strong> 124</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 /Applications/MAMP/htdocs/talend/app/Helpers/Database.php(124): PDOStatement->execute()
+#1 /Applications/MAMP/htdocs/talend/app/Models/ParkingAggloHeure.php(45): Helpers\Database->select('SELECT pa.Datet...', Array, 8, 'Entite\\ParkingA...')
+#2 /Applications/MAMP/htdocs/talend/app/controllers/PlaceInfoController.php(68): Models\ParkingAggloHeure->getAggloLastWeekForCode('CORU')
+#3 /Applications/MAMP/htdocs/talend/app/controllers/PlaceInfoController.php(55): Controllers\PlaceInfoController->initAllData(Array)
+#4 [internal function]: Controllers\PlaceInfoController->ajax()
+#5 /Applications/MAMP/htdocs/talend/app/Core/Router.php(124): call_user_func_array(Array, Array)
+#6 /Applications/MAMP/htdocs/talend/app/Core/Router.php(214): Core\Router::invokeObject('controllers\\Pla...')
+#7 /Applications/MAMP/htdocs/talend/app/Core/routes.php(42): Core\Router::dispatch()
+#8 /Applications/MAMP/htdocs/talend/index.php(80): require('/Applications/M...')
+#9 {main}</pre>
+
+           <hr />

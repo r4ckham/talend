@@ -8,16 +8,7 @@
 
 ?>
 
-<div id="container">
-
-</div>
-
-
-
-<script>
-
-
-</script>
+<div id="container"></div>
 
 <script>
     var ajaxUrl = "<?= DIR . \Helpers\Url::URL_DASH_AJAX ?>";

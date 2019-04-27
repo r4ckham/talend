@@ -26,6 +26,8 @@ class Database extends PDO
 
     const USR = "user";
     const PKG = "parking";
+    const PKA = "parking_agglo";
+    const PAH = "parking_agglo_heure";
 
     /**
      * @var array Array of saved databases for reusing

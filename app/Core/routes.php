@@ -24,6 +24,9 @@ Router::any(Url::URL_INS_NEW, 'controllers\NewUserController@insertNewUSer');
 Router::any(Url::URL_DASHBOARD, 'controllers\DashboardController@index');
 Router::any(Url::URL_DASH_AJAX, 'controllers\DashboardController@ajax');
 
+Router::any(Url::URL_PLACE_INFO, 'controllers\PlaceInfoController@index');
+Router::any(Url::URL_PLACE_AJAX, 'controllers\PlaceInfoController@ajax');
+
 
 /* Module routes. */
 $hooks = Hooks::get();

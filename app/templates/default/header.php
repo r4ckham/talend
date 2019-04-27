@@ -86,6 +86,8 @@ $hooks = Hooks::get();
         // Site
         Url::templatePath() . "js/site.js",
         Url::templatePath() . "plugins/Highcharts/code/highcharts.js",
+
+        Url::templatePath() . "js/vue.js",
     ]);
 ?>
 
@@ -297,15 +299,16 @@ $hooks = Hooks::get();
                 <li class="header">HEADER</li>
                 <!-- Optionally, you can add icons to the links -->
                 <li class="">
-                    <a href="<?php //TODO redirect ?>">
+                    <a href="<?= DIR . Url::URL_DASHBOARD ?>">
                         <i class="fa fa-map fa-fw"></i>  <span> Accueil </span>
                     </a>
                 </li>
-                <!--<li class="">
-                    <a href="<?php //TODO redirect ?>">
-                        <i class="fas fa-tasks"></i> <span> Demandes </span>
+                <li class="">
+                    <a href="<?= DIR . Url::URL_PLACE_INFO ?>">
+                        <i class="fas fa-tasks"></i> <span> Detail </span>
                     </a>
                 </li>
+                <!--
                 <li class="">
                     <a href="<?php //TODO redirect ?>">
                         <i class="fas fa-cog fa-spin"></i> <span> Profil </span>

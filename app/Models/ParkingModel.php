@@ -69,6 +69,20 @@ class ParkingModel extends Model
         return $this->db->select($sql , $ps , \PDO::FETCH_CLASS , ParkingEntite::class);
     }
 
+    public function getDataByNameForWeek($name)
+    {
+        $ps = [
+            ":name"=> $name ,
+        ];
+
+        $sql = "SELECT * FROM $this->table ";
+        $sql.= "WHERE $this->f_datetime >=  NOW() - INTERVAL 7 DAY ";
+        $sql.= "AND $this->f_datetime <= NOW() ";
+        $sql.= "AND $this->f_name = :name ORDER BY $this->f_datetime ASC";
+
+        return $this->db->select($sql , $ps , \PDO::FETCH_CLASS , ParkingEntite::class);
+    }
+
     /**
      * @param $name
      * @return array|ParkingEntite
