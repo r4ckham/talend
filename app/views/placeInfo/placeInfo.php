@@ -14,13 +14,13 @@
                 :total="total"
                 :last-date="lastDate"
                 :status="status"
-                :code="code"
-                v-model="test"
+                v-model="code"
+                @input="changeCode"
         ></place-titre>
 
     <div class="row">
-        <place-infos-week :frees="infosDay.frees" class="col-lg-6"></place-infos-week>
-        <place-infos-day :frees="infosWeek.frees" class="col-lg-6"></place-infos-day>
+        <place-infos-day :frees="infosDay.frees" class="col-lg-6"></place-infos-day>
+        <place-infos-week :frees="infosWeek.frees" class="col-lg-6"></place-infos-week>
     </div>
 
 

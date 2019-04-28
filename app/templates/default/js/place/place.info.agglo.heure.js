@@ -114,7 +114,7 @@ var placeAggloHeure = {
                     y: 0
                 },
                 title: {
-                    text: 'Graphique Occupation Moyenne Par Heure'
+                    text: 'Occupation agglomérée sur 30 mins'
                 },
                 xAxis: {
                     type: 'datetime',

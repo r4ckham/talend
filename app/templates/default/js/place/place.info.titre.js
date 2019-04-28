@@ -3,8 +3,12 @@
 var _template = " <div class='alert alert-info row text-center' style='margin-left: 0px;margin-right: 0px;margin-top: 10px;background-color: #3c8dbc!important'> " +
                     "<div class='col-lg-2'> " +
                         "<div class=\"input-group\">\n" +
-                            "<span class='input-group-addon'>Nom <button @click='tarace'> btn </button></span>\n" +
-                            "<p type='text' class='form-control' style='font-weight: bold'> {{ value }} </p>" +
+                            "<span class='input-group-addon'>Nom </span>\n" +
+                            "<select class='form-control' @change='onChange($event)' style='border-radius : 0%;-webkit-appearance: none;'>"+
+                                "<option v-for='option in options' :value='option.code'>"+
+                                    "{{ option.nom }}"+
+                                "</option>"+
+                            "</select>" +
                         "</div>" +
                     "</div>" +
                     "<div class='col-lg-4'> " +
@@ -22,7 +26,7 @@ var _template = " <div class='alert alert-info row text-center' style='margin-le
                     "<div class='col-lg-2'> " +
                         "<div class=\"input-group\">\n" +
                             "<span class='input-group-addon'>Code</span>\n" +
-                            "<p type='text' class='form-control' style='font-weight: bold'> {{ code }} </p>" +
+                            "<p type='text' class='form-control' style='font-weight: bold'> {{ value }} </p>" +
                         "</div>" +
                     "</div>" +
                     "<div class='col-lg-2'> " +
@@ -35,12 +39,23 @@ var _template = " <div class='alert alert-info row text-center' style='margin-le
 
 var placeTitre = {
 
-    props : ["titre" , "total" , "lastDate" , "status" , "code" , "value"],
+    props : ["titre" , "total" , "lastDate" , "status" , "value"],
 
     template: _template,
 
     data:  function(){
         return {
+            selected : "Triangle",
+            options: [
+                { nom : "Corum"             , code : "CORU"},
+                { nom : "Triangle"          , code : "Triangle"},
+                { nom : "Antigone"          , code : "ANTI"},
+                { nom : "Arc de Triomphe"   , code : "ARCT"},
+                { nom : "Foch"              , code : "FOCH"},
+                { nom : "Gambetta"          , code : "GAMB"},
+                { nom : "Gare"              , code : "GARE"},
+                { nom : "Europa"            , code : "EURO"},
+            ],
         };
     },
 
@@ -49,10 +64,9 @@ var placeTitre = {
     },
 
     methods : {
-        tarace : function () {
-            console.log(this.test);
-
-            this.$emit("input" , "lalalalal");
-        }
+        onChange : function(event) {
+            console.log(event.target.value);
+            this.$emit("input" , event.target.value);
+        },
     },
 };

@@ -116,7 +116,7 @@ var placeInfosWeek = {
                     y: 0
                 },
                 title: {
-                    text: 'Graphique Temps réel'
+                    text: 'Graphique Hebdomadaire'
                 },
                 xAxis: {
                     type: 'datetime',

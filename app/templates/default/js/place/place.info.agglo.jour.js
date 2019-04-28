@@ -101,6 +101,13 @@ var placeAggloJour = {
                 colors : ["blueviolet"],
 
                 chart: {
+                    backgroundColor: {
+                        linearGradient: [0, 0, 500, 500],
+                        stops: [
+                            [0, 'rgb(255, 255, 255)'],
+                            [1, 'rgb(240, 240, 255)']
+                        ]
+                    },
                     borderColor: 'lightgrey',
                     borderWidth: 1,
                     borderRadius: 5,
@@ -114,7 +121,7 @@ var placeAggloJour = {
                     y: 0
                 },
                 title: {
-                    text: 'Graphique Occupation Moyenne Par Jour'
+                    text: 'Occupation agglomérée sur 24 heures'
                 },
                 xAxis: {
                     type: 'datetime',

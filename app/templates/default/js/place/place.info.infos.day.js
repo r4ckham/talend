@@ -14,10 +14,6 @@ var _optionHighchart = {
         zoomType: 'x',
     },
 
-    title: {
-        text: 'Place de Parking : Triangle'
-    },
-
     subtitle: {
         text: 'Source: data.montpellier3m.fr'
     },
@@ -116,7 +112,7 @@ var placeInfosDay = {
                     y: 0
                 },
                 title: {
-                    text: 'Graphique Temps réel'
+                    text: 'Graphique Journalier'
                 },
                 xAxis: {
                     type: 'datetime',

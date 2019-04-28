@@ -23,8 +23,6 @@ var _app = {
         lastDate    : null,
         code        : null,
         status      : null,
-
-        test        : "zut",
     },
 
     components : {
@@ -50,6 +48,10 @@ var _app = {
     },
 
     methods :  {
+
+        changeCode : function(){
+            this.initAllData();
+        },
 
         initAllData : function()
         {
